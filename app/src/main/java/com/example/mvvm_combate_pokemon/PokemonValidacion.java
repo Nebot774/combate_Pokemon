@@ -1,4 +1,4 @@
-package com.example.mvvm_combate_pokemon.ui.theme;
+package com.example.mvvm_combate_pokemon;
 
 import android.os.Bundle;
 import android.view.View;

@@ -64,15 +64,32 @@ public class CombatActivity extends AppCompatActivity {
         int damageToPokemon1 = calculateDamage(pokemon2, pokemon1);
         pokemon1.setHp(pokemon1.getHp() - damageToPokemon1);
 
-        // Actualizar la UI con los nuevos estados
-        updateUI();
+        // Agregar mensajes para ataques fuertes o poca vida
+        String combatLogMessage = "";
+        if (damageToPokemon2 > 100) { // definimos el umbral para un "golpe fuerte"
+            combatLogMessage += "¡Golpe fuerte de " + pokemon1.getNombre() + " a " + pokemon2.getNombre() + "!\n";
+        }
+        if (pokemon2.getHp() < 50) { // Supongamos que 20 es el umbral para "poca vida"
+            combatLogMessage += "¡" + pokemon2.getNombre() + " está debilitándose!\n";
+        }
+        if (damageToPokemon1 > 100) {
+            combatLogMessage += "¡Golpe fuerte de " + pokemon2.getNombre() + " a " + pokemon1.getNombre() + "!\n";
+        }
+        if (pokemon1.getHp() < 50) {
+            combatLogMessage += "¡" + pokemon1.getNombre() + " está debilitándose!\n";
+        }
 
         // Comprobar si alguno de los Pokémon se ha debilitado
         if (pokemon1.getHp() <= 0 || pokemon2.getHp() <= 0) {
-            tvCombatLog.setText(pokemon1.getHp() <= 0 ? "¡" + pokemon1.getNombre() + " se ha debilitado!" : "¡" + pokemon2.getNombre() + " se ha debilitado!");
+            combatLogMessage += pokemon1.getHp() <= 0 ? "¡" + pokemon1.getNombre() + " se ha debilitado!" : "¡" + pokemon2.getNombre() + " se ha debilitado!";
             btnCombat.setEnabled(false); // Desactivar el botón si el combate ha terminado
         }
+
+        // Actualizar la UI con los nuevos estados y mensajes
+        tvCombatLog.setText(combatLogMessage);
+        updateUI();
     }
+
 
     private int calculateDamage(Pokemon attacker, Pokemon defender) {
         // Fórmula simple de daño

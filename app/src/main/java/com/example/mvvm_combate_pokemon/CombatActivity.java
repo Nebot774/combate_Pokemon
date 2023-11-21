@@ -28,6 +28,13 @@ public class CombatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_combate);
 
+        // Obtener Pokémon del intent
+        pokemon1 = (Pokemon) getIntent().getSerializableExtra("pokemon1");
+        pokemon2 = (Pokemon) getIntent().getSerializableExtra("pokemon2");
+
+        // Comprobar la integridad de los datos de Pokémon
+        comprobarIntegridad();
+
         // Inicialización de los controles de la UI
         tvPokemon1Stats = findViewById(R.id.tvPokemon1Stats);
         tvPokemon2Stats = findViewById(R.id.tvPokemon2Stats);

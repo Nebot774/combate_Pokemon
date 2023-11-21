@@ -1,6 +1,8 @@
 package com.example.mvvm_combate_pokemon;
 
-public class Pokemon {
+import java.io.Serializable;
+
+public class Pokemon  implements Serializable {
     // Atributos de la clase
     private String nombre;
     private int hp;

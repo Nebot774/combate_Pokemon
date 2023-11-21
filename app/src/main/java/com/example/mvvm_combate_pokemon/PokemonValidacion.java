@@ -1,5 +1,6 @@
 package com.example.mvvm_combate_pokemon;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,7 @@ public class PokemonValidacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (validarDatosPokemon()) {
+
                     // Aquí va el código para iniciar el combate
 
                     //Creamos los Pokemon
@@ -67,6 +69,11 @@ public class PokemonValidacion extends AppCompatActivity {
                             Integer.parseInt(pokemon2DefensaEspecial.getText().toString())
                     );
 
+
+                    Intent intent = new Intent(PokemonValidacion.this, CombatActivity.class);
+                    intent.putExtra("pokemon1", pokemon1); // No se necesita casting
+                    intent.putExtra("pokemon2", pokemon2);
+                    startActivity(intent);
 
 
                 }

@@ -1,7 +1,142 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<!-- activity_combat.xml -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@color/redToolbar"
+        android:elevation="4dp">
+
+        <!-- LinearLayout Principal para la Toolbar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="horizontal">
+
+            <!-- Espacio para empujar todo a la derecha -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <!-- LinearLayout para la primera imagen -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/pokemonLogo"
+                    android:layout_width="244dp"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:src="@drawable/logopokemon" />
+            </LinearLayout>
+
+            <!-- LinearLayout para la segunda imagen -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/bolaPokemon"
+                    android:layout_width="166dp"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:src="@drawable/bolapokemon" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <!-- Sección de Pokémon 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <!-- Títulos de las estadísticas de Pokémon 1 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estadísticas Pokémon 1"
+            android:textStyle="bold" />
+
+        <!-- Estadísticas de Pokémon 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPokemon1Stats"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="HP, Ataque, Defensa..." />
+
+            <!-- Aquí puedes añadir más TextViews o elementos para las estadísticas -->
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Sección de Pokémon 2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="119dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <!-- Títulos de las estadísticas de Pokémon 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estadísticas Pokémon 2"
+            android:textStyle="bold" />
+
+        <!-- Estadísticas de Pokémon 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPokemon2Stats"
+                android:layout_width="393dp"
+                android:layout_height="95dp"
+                android:text="HP, Ataque, Defensa..." />
+
+            <!-- Aquí puedes añadir más TextViews o elementos para las estadísticas -->
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Botón para realizar el ataque -->
+    <Button
+        android:id="@+id/btnAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atacar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        />
+
+    <!-- Área de mensajes -->
+    <TextView
+        android:id="@+id/tvCombatLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log de Combate" />
 </LinearLayout>
+
+</ScrollView>

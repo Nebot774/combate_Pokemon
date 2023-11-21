@@ -81,5 +81,5 @@ public class Pokemon {
                 '}';
     }
 
-    // Aquí puedes agregar más métodos relacionados con la lógica de Pokémon
+
 }

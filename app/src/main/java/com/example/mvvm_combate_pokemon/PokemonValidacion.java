@@ -44,6 +44,31 @@ public class PokemonValidacion extends AppCompatActivity {
             public void onClick(View v) {
                 if (validarDatosPokemon()) {
                     // Aquí va el código para iniciar el combate
+
+                    //Creamos los Pokemon
+
+                    // Pokemon 1
+                    Pokemon pokemon1 = new Pokemon(
+                            pokemon1Nombre.getText().toString(),
+                            Integer.parseInt(pokemon1HP.getText().toString()),
+                            Integer.parseInt(pokemon1Ataque.getText().toString()),
+                            Integer.parseInt(pokemon1Defensa.getText().toString()),
+                            Integer.parseInt(pokemon1AtaqueEspecial.getText().toString()),
+                            Integer.parseInt(pokemon1DefensaEspecial.getText().toString())
+                    );
+
+                    //Pokemon 2
+                    Pokemon pokemon2 = new Pokemon(
+                            pokemon2Nombre.getText().toString(),
+                            Integer.parseInt(pokemon2HP.getText().toString()),
+                            Integer.parseInt(pokemon2Ataque.getText().toString()),
+                            Integer.parseInt(pokemon2Defensa.getText().toString()),
+                            Integer.parseInt(pokemon2AtaqueEspecial.getText().toString()),
+                            Integer.parseInt(pokemon2DefensaEspecial.getText().toString())
+                    );
+
+
+
                 }
             }
         });
@@ -186,4 +211,6 @@ public class PokemonValidacion extends AppCompatActivity {
 
 
     }
-    }
+
+
+}
